@@ -85,14 +85,16 @@
             <artifactId>apm-toolkit-trace</artifactId>
         </dependency>
 
-
-
         <!-- 校验工具 -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
 
     </dependencies>
 
