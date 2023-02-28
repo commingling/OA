@@ -5,10 +5,10 @@ server:
 spring:
   # datasource 数据源配置内容，对应 DataSourceProperties 配置属性类
   datasource:
-    url: jdbc:mysql://43.143.193.37:3306/commingling?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root # 数据库账号
-    password: e8KwvzbVEeYXI2Eye^UiSPZy # 数据库密码
+    password: root # 数据库密码
     type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
     # Druid 自定义配置，对应 DruidDataSource 中的 setting 方法的属性
     druid:
@@ -22,3 +22,11 @@ spring:
         enabled: true # 是否开启 StatViewServlet
         login-username: commingling # 账号
         login-password: 123456 # 密码
+
+  data:
+  # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
+    redis:
+      host: 127.0.0.1 # 地址
+      port: 6379 # 端口
+      database: 0 # 数据库索引
+#    password: 123456 # 密码，建议生产环境开启
