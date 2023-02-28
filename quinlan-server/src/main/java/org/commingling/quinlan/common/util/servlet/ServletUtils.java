@@ -8,13 +8,11 @@ import org.springframework.http.MediaType;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
+import jakarta.servlet.http.HttpServletRequest;
 import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
-
 /**
  * 客户端工具类
  *
@@ -69,7 +67,7 @@ public class ServletUtils {
         if (!(requestAttributes instanceof ServletRequestAttributes)) {
             return null;
         }
-        return (HttpServletRequest) ((ServletRequestAttributes) requestAttributes).getRequest();
+        return ((ServletRequestAttributes) requestAttributes).getRequest();
     }
 
     public static String getUserAgent() {
@@ -85,7 +83,8 @@ public class ServletUtils {
         if (request == null) {
             return null;
         }
-        return ServletUtil.getClientIP(request);
+//        return ServletUtil.getClientIP(request);
+        return "未完成功能";
     }
 
     public static boolean isJsonRequest(ServletRequest request) {
