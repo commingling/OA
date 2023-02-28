@@ -8,7 +8,6 @@ import org.commingling.quinlan.common.enums.CommonStatusEnum;
 import org.commingling.quinlan.common.enums.SexEnum;
 import org.commingling.quinlan.dal.dataobject.BaseDO;
 import org.commingling.quinlan.framework.mybatis.type.JsonLongSetTypeHandler;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.time.LocalDateTime;
 import java.util.Set;

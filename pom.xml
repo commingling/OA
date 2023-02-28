@@ -186,6 +186,14 @@
                 <version>${podam.version}</version>
             </dependency>
 
+            <!-- 校验工具 -->
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>4.0.4</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

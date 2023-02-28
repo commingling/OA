@@ -4,6 +4,8 @@ import cn.hutool.core.util.ObjectUtil;
 import com.xingyuv.captcha.model.common.ResponseModel;
 import com.xingyuv.captcha.model.vo.CaptchaVO;
 import com.xingyuv.captcha.service.CaptchaService;
+import jakarta.annotation.Resource;
+import jakarta.validation.Validator;
 import org.commingling.quinlan.common.enums.CommonStatusEnum;
 import org.commingling.quinlan.common.enums.UserTypeEnum;
 import org.commingling.quinlan.common.enums.logger.LoginLogTypeEnum;
@@ -25,8 +27,6 @@ import org.commingling.quinlan.service.user.AdminUserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import javax.validation.Validator;
 import java.util.Objects;
 
 import static org.commingling.quinlan.common.enums.error.ErrorCodeConstants.*;

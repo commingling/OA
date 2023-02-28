@@ -1,11 +1,11 @@
 package org.commingling.quinlan.common.util.validation;
 
 import cn.hutool.core.collection.CollUtil;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Validator;
 import org.springframework.util.StringUtils;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import javax.validation.Validator;
 import java.util.Set;
 import java.util.regex.Pattern;
 

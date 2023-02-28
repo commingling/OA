@@ -1,10 +1,11 @@
 package org.commingling.quinlan.common.validation;
 
 import cn.hutool.core.util.StrUtil;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 import org.commingling.quinlan.common.util.validation.ValidationUtils;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+
 
 public class MobileValidator implements ConstraintValidator<Mobile, String> {
 

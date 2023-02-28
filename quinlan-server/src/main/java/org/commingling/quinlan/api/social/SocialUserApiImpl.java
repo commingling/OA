@@ -1,9 +1,8 @@
 package org.commingling.quinlan.api.social;
 
-import org.commingling.quinlan.dal.dto.social.SocialUserBindReqDTO;
+import jakarta.annotation.Resource;
 import org.commingling.quinlan.service.social.SocialUserService;
 
-import javax.annotation.Resource;
 
 public class SocialUserApiImpl implements SocialUserApi{
 

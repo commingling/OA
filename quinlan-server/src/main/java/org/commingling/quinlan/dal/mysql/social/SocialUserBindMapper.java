@@ -1,9 +1,12 @@
 package org.commingling.quinlan.dal.mysql.social;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.commingling.quinlan.dal.dataobject.social.SocialUserBindDO;
 import org.commingling.quinlan.framework.mybatis.mapper.BaseMapperX;
 import org.commingling.quinlan.framework.mybatis.query.LambdaQueryWrapperX;
 
+
+@Mapper
 public interface SocialUserBindMapper extends BaseMapperX<SocialUserBindDO> {
 
     default void deleteByUserTypeAndSocialUserId(Integer userType, Long socialUserId) {

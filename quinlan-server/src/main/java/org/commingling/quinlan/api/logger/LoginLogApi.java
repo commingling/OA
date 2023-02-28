@@ -1,8 +1,8 @@
 package org.commingling.quinlan.api.logger;
 
+import jakarta.validation.Valid;
 import org.commingling.quinlan.dal.dto.logger.LoginLogCreateReqDTO;
 
-import javax.validation.Valid;
 
 /**
  * 登录日志的 API 接口

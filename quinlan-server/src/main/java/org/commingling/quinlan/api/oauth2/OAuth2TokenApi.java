@@ -1,9 +1,9 @@
 package org.commingling.quinlan.api.oauth2;
 
+import jakarta.validation.Valid;
 import org.commingling.quinlan.dal.dto.oauth2.OAuth2AccessTokenCreateReqDTO;
 import org.commingling.quinlan.dal.dto.oauth2.OAuth2AccessTokenRespDTO;
 
-import javax.validation.Valid;
 
 /**
  * OAuth2.0 Token API 接口

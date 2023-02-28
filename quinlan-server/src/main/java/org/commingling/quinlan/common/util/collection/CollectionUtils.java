@@ -2,7 +2,6 @@ package org.commingling.quinlan.common.util.collection;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.CollectionUtil;
-import com.google.common.collect.ImmutableMap;
 
 import java.util.*;
 import java.util.function.BinaryOperator;
@@ -140,14 +139,6 @@ public class CollectionUtils {
         return from.stream().collect(Collectors.groupingBy(keyFunc, Collectors.mapping(valueFunc, Collectors.toSet())));
     }
 
-    public static <T, K> Map<K, T> convertImmutableMap(Collection<T> from, Function<T, K> keyFunc) {
-        if (CollUtil.isEmpty(from)) {
-            return Collections.emptyMap();
-        }
-        ImmutableMap.Builder<K, T> builder = ImmutableMap.builder();
-        from.forEach(item -> builder.put(keyFunc.apply(item), item));
-        return builder.build();
-    }
 
     public static boolean containsAny(Collection<?> source, Collection<?> candidates) {
         return org.springframework.util.CollectionUtils.containsAny(source, candidates);

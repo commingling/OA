@@ -1,10 +1,10 @@
 package org.commingling.quinlan.dal.dto.oauth2;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.commingling.quinlan.common.enums.UserTypeEnum;
 import org.commingling.quinlan.common.validation.InEnum;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 

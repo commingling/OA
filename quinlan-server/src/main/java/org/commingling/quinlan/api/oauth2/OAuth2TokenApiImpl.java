@@ -1,5 +1,6 @@
 package org.commingling.quinlan.api.oauth2;
 
+import jakarta.annotation.Resource;
 import org.commingling.quinlan.dal.convert.auth.OAuth2TokenConvert;
 import org.commingling.quinlan.dal.dataobject.oauth2.OAuth2AccessTokenDO;
 import org.commingling.quinlan.dal.dto.oauth2.OAuth2AccessTokenCreateReqDTO;
@@ -7,7 +8,6 @@ import org.commingling.quinlan.dal.dto.oauth2.OAuth2AccessTokenRespDTO;
 import org.commingling.quinlan.service.oauth2.OAuth2TokenService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 
 /**
  * OAuth2.0 Token API 实现类
