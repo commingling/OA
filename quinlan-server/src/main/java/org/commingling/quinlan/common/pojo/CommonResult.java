@@ -1,5 +1,6 @@
 package org.commingling.quinlan.common.pojo;
 
+import lombok.Data;
 import org.commingling.quinlan.common.exception.ErrorCode;
 import org.commingling.quinlan.common.exception.enums.GlobalErrorCodeConstants;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
  *
  * @param <T> 数据泛型
  */
+@Data
 public class CommonResult<T> implements Serializable {
 
     /**

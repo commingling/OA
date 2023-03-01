@@ -3,20 +3,25 @@ package org.commingling.quinlan.service.oauth2;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.commingling.quinlan.common.enums.CommonStatusEnum;
 import org.commingling.quinlan.common.util.string.StrUtils;
 import org.commingling.quinlan.dal.dataobject.oauth2.OAuth2ClientDO;
+import org.commingling.quinlan.dal.mysql.oauth2.OAuth2ClientMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import static org.commingling.quinlan.common.enums.error.ErrorCodeConstants.*;
 import static org.commingling.quinlan.common.exception.util.ServiceExceptionUtil.exception;
+import static org.commingling.quinlan.common.util.collection.CollectionUtils.convertMap;
 
 
 /**
@@ -39,6 +44,22 @@ public class OAuth2ClientServiceImpl implements OAuth2ClientService{
     @Setter // 解决单测
     private volatile Map<String, OAuth2ClientDO> clientCache;
 
+    @Resource
+    private OAuth2ClientMapper oauth2ClientMapper;
+
+    /**
+     * 初始化 {@link #clientCache} 缓存
+     */
+    @Override
+    @PostConstruct
+    public void initLocalCache() {
+        // 第一步：查询数据
+        List<OAuth2ClientDO> clients = oauth2ClientMapper.selectList();
+        log.info("[initLocalCache][缓存 OAuth2 客户端，数量为:{}]", clients.size());
+
+        // 第二步：构建缓存。
+        clientCache = convertMap(clients, OAuth2ClientDO::getClientId);
+    }
 
     @Override
     public OAuth2ClientDO validOAuthClientFromCache(String clientId, String clientSecret, String authorizedGrantType, Collection<String> scopes, String redirectUri) {

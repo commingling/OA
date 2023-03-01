@@ -13,6 +13,10 @@ import java.util.Collection;
  */
 public interface OAuth2ClientService {
 
+    /**
+     * 初始化 OAuth2Client 的本地缓存
+     */
+    void initLocalCache();
 
     /**
      * 从缓存中，校验客户端是否合法
