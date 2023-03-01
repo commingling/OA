@@ -1,6 +1,7 @@
 package org.commingling.quinlan.framework.mybatis.handler;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -20,6 +21,13 @@ public class WebFrameworkUtils {
         HttpServletRequest request = getRequest();
         return getLoginUserId(request);
     }
+
+    private static WebProperties properties;
+
+    public WebFrameworkUtils(WebProperties webProperties) {
+        WebFrameworkUtils.properties = webProperties;
+    }
+
 
     /**
      * 获得当前用户的编号，从请求中

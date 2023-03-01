@@ -50,7 +50,7 @@ public class OAuth2TokenServiceImpl implements OAuth2TokenService{
                 .setExpiresTime(LocalDateTime.now().plusSeconds(clientDO.getAccessTokenValiditySeconds()));
         oauth2AccessTokenMapper.insert(accessTokenDO);
         // 记录到 Redis 中
-//        oauth2AccessTokenRedisDAO.set(accessTokenDO);
+        oauth2AccessTokenRedisDAO.set(accessTokenDO);
         return accessTokenDO;
     }
 

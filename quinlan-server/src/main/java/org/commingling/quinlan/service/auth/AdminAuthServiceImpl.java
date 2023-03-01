@@ -106,7 +106,6 @@ public class AdminAuthServiceImpl implements AdminAuthService{
         if (!captchaEnable) {
             return;
         }
-
         // 校验验证码
         // 校验验证码
         ValidationUtils.validate(validator, reqVO, AuthLoginReqVO.CodeEnableGroup.class);
