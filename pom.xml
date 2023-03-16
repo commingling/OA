@@ -11,7 +11,7 @@
 
     <modules>
         <module>quinlan-server</module>
-        <module>quinlan-member</module>
+        <module>quinlan-websocket</module>
     </modules>
 
     <properties>
